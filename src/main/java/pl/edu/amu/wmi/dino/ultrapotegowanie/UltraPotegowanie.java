@@ -20,10 +20,14 @@ public class UltraPotegowanie {
      * @return 
      */
     public static String poteguj(String a, String b){
-        int aa = Integer.parseInt(a);
-        int bb = Integer.parseInt(b);
-        
-        return Long.toString(Math.round(Math.pow((double)aa, (double)bb)));
+        //Mikołaj Szumigalski
+        double aa = Double.parseDouble(a); // działa dla double
+        double bb = Double.parseDouble(b);
+        long c = Math.round(Math.pow(aa, bb)); // zaokrąglanie liczb typu 1.0 do 1
+        if(0 != Math.pow(aa, bb)%c)
+            return Double.toString(Math.pow(aa, bb));
+        else
+            return Long.toString(c);
     }
     
 }
