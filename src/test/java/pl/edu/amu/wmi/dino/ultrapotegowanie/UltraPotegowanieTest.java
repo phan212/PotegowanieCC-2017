@@ -37,4 +37,50 @@ public class UltraPotegowanieTest {
         }
     }
     /////////
+    
+    // Helena Galazka
+    @Test
+    public void testPoteguj4() {
+        assertEquals("1.5", UltraPotegowanie.poteguj("1.5", "1"));
+    }
+    
+    @Test
+     public void testPoteguj5() {
+        assertEquals("2.25", UltraPotegowanie.poteguj("1.5", "2"));
+    }
+     
+    @Test
+     public void testPoteguj6() {
+        assertEquals("0.5", UltraPotegowanie.poteguj("2", "-1"));
+    }
+     
+    /////////
+     
+     /**
+     * Mieczyslaw Krawiarz
+     * 416098
+     */
+    
+    @Test
+     public void test0x() {
+        assertEquals("16", UltraPotegowanie.poteguj("0x10", "0x1"));
+    }
+     
+     @Test
+     public void test0xGen1() {
+         Random r = new Random();
+         for(int i = 0; i < 100; i++){
+             int licz = r.nextInt();
+             assertEquals("1", UltraPotegowanie.poteguj(Integer.toString(licz), "0x0"));
+         }
+    }
+     
+     @Test
+     public void test0xGen2() {
+         Random r = new Random();
+         for(int i = 0; i < 100; i++){
+             int licz = r.nextInt();
+             assertEquals("0", UltraPotegowanie.poteguj("0x0", Integer.toString(licz)));
+         }
+    }
 }
