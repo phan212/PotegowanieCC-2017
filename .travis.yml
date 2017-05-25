@@ -1,2 +1,7 @@
+sudo: false
 language: java
-script: mvn clean verify
+jdk:
+- oraclejdk8
+install:
+script: 
+- mvn clean install
