@@ -20,10 +20,12 @@ public class UltraPotegowanie {
      * @return 
      */
     public static String poteguj(String a, String b){
-        int aa = Integer.parseInt(a);
-        int bb = Integer.parseInt(b);
-        
-        return Long.toString(Math.round(Math.pow((double)aa, (double)bb)));
+        double aa = Double.parseDouble(a);
+        double bb = Double.parseDouble(b);
+        double power = Math.pow(aa, bb);
+        if (power % 1 == 0)
+               return Long.toString(Math.round(power));
+        return Double.toString( Math.pow(aa, bb));
     }
     
 }
