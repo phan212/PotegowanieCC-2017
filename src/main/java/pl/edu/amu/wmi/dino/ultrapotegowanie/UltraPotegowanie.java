@@ -20,10 +20,25 @@ public class UltraPotegowanie {
      * @return 
      */
     public static String poteguj(String a, String b){
+        String aaa = a;
+        String bbb = b;
+        double aFloat = Float.parseFloat(a);
+        double bFloat = Float.parseFloat(b);
+        if(aaa.contains(".") || bbb.contains(".")){
+
+            double value = Math.pow(aFloat, bFloat);
+            return Double.toString(value);
+
+            
+        } else if(bFloat < 0){
+            return Double.toString(1 / aFloat);
+            
+        } else {
         int aa = Integer.parseInt(a);
         int bb = Integer.parseInt(b);
         
         return Long.toString(Math.round(Math.pow((double)aa, (double)bb)));
+        }
     }
     
 }
