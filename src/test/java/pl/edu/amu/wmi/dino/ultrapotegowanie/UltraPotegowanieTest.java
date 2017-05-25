@@ -37,4 +37,22 @@ public class UltraPotegowanieTest {
         }
     }
     /////////
+    
+    // Helena Galazka
+    @Test
+    public void testPoteguj4() {
+        assertEquals("1.5", UltraPotegowanie.poteguj("1.5", "1"));
+    }
+    
+    @Test
+     public void testPoteguj5() {
+        assertEquals("2.25", UltraPotegowanie.poteguj("1.5", "2"));
+    }
+     
+    @Test
+     public void testPoteguj6() {
+        assertEquals("0.5", UltraPotegowanie.poteguj("2", "-1"));
+    }
+     
+    /////////
 }
