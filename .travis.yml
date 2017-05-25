@@ -1,5 +1,7 @@
 sudo: false
 language: java
+jdk:
+- oraclejdk7
 install:
 script: 
-    - mvn clean install
+- mvn clean install
