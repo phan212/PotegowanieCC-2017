@@ -36,5 +36,17 @@ public class UltraPotegowanieTest {
             
         }
     }
-    /////////
+    //Nikodem Pachala
+	@Test
+	public void testPoteguj4() {
+		assertEquals("1.0", UltraPotegowanie.poteguj("1.0", "1.0"));
+	}
+	@Test
+    public void testPoteguj5() {
+        assertEquals("10000000000", UltraPotegowanie.poteguj("10", "10"));
+    }
+	@Test
+    public void testPoteguj6() {
+        assertEquals("-1", UltraPotegowanie.poteguj("-1", "3"));
+    }
 }
