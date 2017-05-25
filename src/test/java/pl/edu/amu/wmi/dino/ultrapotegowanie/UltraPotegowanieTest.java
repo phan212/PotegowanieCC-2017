@@ -36,17 +36,23 @@ public class UltraPotegowanieTest {
             
         }
     }
-    //Nikodem Pachala
-	@Test
-	public void testPoteguj4() {
-		assertEquals("1.0", UltraPotegowanie.poteguj("1.0", "1.0"));
-	}
-	@Test
-    public void testPoteguj5() {
-        assertEquals("10000000000", UltraPotegowanie.poteguj("10", "10"));
+    /////////
+    
+    // Helena Galazka
+    @Test
+    public void testPoteguj4() {
+        assertEquals("1.5", UltraPotegowanie.poteguj("1.5", "1"));
     }
-	@Test
-    public void testPoteguj6() {
-        assertEquals("-1", UltraPotegowanie.poteguj("-1", "3"));
+    
+    @Test
+     public void testPoteguj5() {
+        assertEquals("2.25", UltraPotegowanie.poteguj("1.5", "2"));
     }
+     
+    @Test
+     public void testPoteguj6() {
+        assertEquals("0.5", UltraPotegowanie.poteguj("2", "-1"));
+    }
+     
+    /////////
 }
