@@ -54,8 +54,22 @@ public class UltraPotegowanieTest {
         assertEquals("0.5", UltraPotegowanie.poteguj("2", "-1"));
     }
      
-    /////////
+    // Mikolaj Szumigalski testy dla dużych liczb i dla 0
+     @Test
+    public void testPotegujSzumi1() {
+        assertEquals("1000000000000", UltraPotegowanie.poteguj("1000000", "2"));
+    }
+    
+    @Test
+     public void testPotegujSzumi2() {
+        assertEquals("0.0000000000001", UltraPotegowanie.poteguj("1000000", "-2"));
+    }
      
+    @Test
+     public void testPotegujSzumi3() {
+        assertEquals("0", UltraPotegowanie.poteguj("0", "1000"));
+       
+     /////////
      /**
      * Mieczyslaw Krawiarz
      * 416098

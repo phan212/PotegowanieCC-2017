@@ -23,9 +23,9 @@ public class UltraPotegowanie {
         double aa = Double.parseDouble(a);
         double bb = Double.parseDouble(b);
         double power = Math.pow(aa, bb);
-        if (power % 1 == 0)
+        if(power % 1 == 0)    // sprawdzanie, czy potega jest calkowita
                return Long.toString(Math.round(power));
-        return Double.toString( Math.pow(aa, bb));
+        return Double.toString(power);
     }
     
 }
