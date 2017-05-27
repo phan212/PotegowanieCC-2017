@@ -55,7 +55,7 @@ public class UltraPotegowanieTest {
     }
      
     /////////
-    
+
     // Nikodem Pachala
      @Test
      public void testPoteguj20(){
@@ -71,4 +71,22 @@ public class UltraPotegowanieTest {
      public void testPoteguj22(){
           assertEquals("-1.0", UltraPotegowanie.poteguj("-1", "-1"));
      }
+
+
+    // Mikolaj Szumigalski testy dla dużych liczb i dla 0
+     @Test
+    public void testPotegujSzumi1() {
+        assertEquals("1000000000000", UltraPotegowanie.poteguj("1000000", "2"));
+    }
+    
+    @Test
+     public void testPotegujSzumi2() {
+        assertEquals("0.0000000000001", UltraPotegowanie.poteguj("1000000", "-2"));
+    }
+     
+    @Test
+     public void testPotegujSzumi3() {
+        assertEquals("0", UltraPotegowanie.poteguj("0", "1000"));
+    }
 }
+
