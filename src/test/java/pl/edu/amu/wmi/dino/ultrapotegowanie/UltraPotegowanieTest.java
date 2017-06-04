@@ -69,7 +69,7 @@ public class UltraPotegowanieTest {
      
      @Test
      public void testPoteguj22(){
-          assertEquals("-1.0", UltraPotegowanie.poteguj("-1", "-1"));
+          assertEquals("-1", UltraPotegowanie.poteguj("-1", "-1")); 
      }
 
 
@@ -78,15 +78,34 @@ public class UltraPotegowanieTest {
     public void testPotegujSzumi1() {
         assertEquals("1000000000000", UltraPotegowanie.poteguj("1000000", "2"));
     }
-    
-    @Test
-     public void testPotegujSzumi2() {
-        assertEquals("0.0000000000001", UltraPotegowanie.poteguj("1000000", "-2"));
+
+     @Test
+    public void testPotegujSzumi2() {
+        assertEquals("0.000000000001", UltraPotegowanie.poteguj("1000000", "-2"));
     }
      
     @Test
-     public void testPotegujSzumi3() {
+    public void testPotegujSzumi3() {
         assertEquals("0", UltraPotegowanie.poteguj("0", "1000"));
     }
+    //Diana Orłowska
+    @Test
+    public void testNotacjaNaukowa(){
+        assertEquals("27000000000",UltraPotegowanie.poteguj("0.3e4","3"));
+    }
+    
+    @Test
+    public void testNotacjaNaukowa2(){
+        assertEquals("0.00000025",UltraPotegowanie.poteguj("2e3","-2"));
+    }
+    
+    @Test
+    public void testUlamki(){
+        assertEquals("4",UltraPotegowanie.poteguj("256","0.25"));
+    }
+    }
+    
+    
+    
 }
 
