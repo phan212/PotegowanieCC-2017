@@ -101,7 +101,7 @@ public class UltraPotegowanieTest {
     
     @Test
     public void testUlamki(){
-        assertEquals("4",UltraPotegowanie.poteguj("256","0.25"));
+        assertEquals("0.44721",UltraPotegowanie.poteguj("0.2","0.5"));
     }
     }
     
