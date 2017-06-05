@@ -86,7 +86,7 @@ public class UltraPotegowanieTest {
     @Test
      public void testPotegujSzumi3() {
         assertEquals("0", UltraPotegowanie.poteguj("0", "1000"));
-       
+     }  
      /////////
      /**
      * Mieczyslaw Krawiarz
@@ -113,6 +113,33 @@ public class UltraPotegowanieTest {
          for(int i = 0; i < 100; i++){
              int licz = r.nextInt();
              assertEquals("0", UltraPotegowanie.poteguj("0x0", Integer.toString(licz)));
+         }
+    }
+    /*
+     * Agata Buszczak
+     * 416051
+    */
+    
+     @Test
+     public void tetsu1() {
+        assertEquals("4", UltraPotegowanie.poteguj("0b11", "0b1"));
+    }
+     
+     @Test
+     public void tetsu2() {
+         Random r = new Random();
+         for(int i = 0; i < 100; i++){
+             int licz = r.nextInt();
+             assertEquals("1", UltraPotegowanie.poteguj(Integer.toString(licz), "0b0"));
+         }
+    }
+     
+     @Test
+     public void tetsu3() {
+         Random r = new Random();
+         for(int i = 0; i < 100; i++){
+             int licz = r.nextInt();
+             assertEquals("0", UltraPotegowanie.poteguj("0b0", Integer.toString(licz)));
          }
     }
 }
