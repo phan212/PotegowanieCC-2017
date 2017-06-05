@@ -72,7 +72,6 @@ public class UltraPotegowanieTest {
           assertEquals("-1", UltraPotegowanie.poteguj("-1", "-1"));
      }
 
-
     // Mikolaj Szumigalski testy dla dużych liczb i dla 0
      @Test
     public void testPotegujSzumi1() {
@@ -87,7 +86,7 @@ public class UltraPotegowanieTest {
     @Test
      public void testPotegujSzumi3() {
         assertEquals("0", UltraPotegowanie.poteguj("0", "1000"));
-     }   
+     }
      /////////
      /**
      * Mieczyslaw Krawiarz
@@ -115,6 +114,7 @@ public class UltraPotegowanieTest {
              int licz = r.nextInt();
              assertEquals("0", UltraPotegowanie.poteguj("0x0", Integer.toString(licz)));
          }
+
     }
     
     //Diana Orłowska
