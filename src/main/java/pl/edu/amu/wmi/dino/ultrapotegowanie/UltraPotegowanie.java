@@ -12,6 +12,7 @@ import java.util.Random;
  * @author bikol
  */
 public class UltraPotegowanie {
+    
     /**
      * Zwaraca wartość a^b.
      * @param a
@@ -19,25 +20,37 @@ public class UltraPotegowanie {
      * @return 
      */
     public static String poteguj(String a, String b){
-        //Mikołaj Szumigalski
-        double aa = Double.parseDouble(a); // działa dla double
-        double bb = Double.parseDouble(b);
-        long c = Math.round(Math.pow(aa, bb)); // zaokrąglanie liczb typu 1.0 do 1
+        double aa;
+        double bb;
+
+        aa = szesnastkowe(a);
+        bb = szesnastkowe(b);
+
+        double power = Math.pow(aa, bb);
         if(aa == 0 && bb != 0){
-            String xo = new String("0");
+            String xo = "0";
             return xo;
-        }                
-        if(0 != Math.pow(aa, bb)%c){
-            if(bb == -2){
-                double cc = Math.pow(aa, bb);
-                String xo = String.format("%.12f", cc).replace(",",".");
-                return xo;                
-            }
-            else
-                return Double.toString(Math.pow(aa,bb));
         }
-        else
-            return Long.toString(c);
+        if (power % 1 == 0)
+               return Long.toString(Math.round(power));
+        String result =  Double.toString(power);
+        if (result.contains("E")){
+            return String.format("%.12f", power).replace(",",".");
+        }
+        return result;
     }
-    
+    public static double szesnastkowe(String a){
+        if(a.contains("0x")){
+        String digits = "0123456789ABCDEF";
+        double val = 0;
+        for (int i = 2; i < a.length(); i++){
+            char c = a.charAt(i);
+            int d = digits.indexOf(c);
+            val = 16*val + d;
+        }
+        return val;
+        }else{
+        return Double.parseDouble(a);
+        }
+    }
 }
