@@ -69,7 +69,7 @@ public class UltraPotegowanieTest {
      
      @Test
      public void testPoteguj22(){
-          assertEquals("-1", UltraPotegowanie.poteguj("-1", "-1")); 
+          assertEquals("-1", UltraPotegowanie.poteguj("-1", "-1"));
      }
 
 
@@ -78,16 +78,45 @@ public class UltraPotegowanieTest {
     public void testPotegujSzumi1() {
         assertEquals("1000000000000", UltraPotegowanie.poteguj("1000000", "2"));
     }
-
-     @Test
-    public void testPotegujSzumi2() {
+    
+    @Test
+     public void testPotegujSzumi2() {
         assertEquals("0.000000000001", UltraPotegowanie.poteguj("1000000", "-2"));
     }
      
     @Test
-    public void testPotegujSzumi3() {
+     public void testPotegujSzumi3() {
         assertEquals("0", UltraPotegowanie.poteguj("0", "1000"));
+     }   
+     /////////
+     /**
+     * Mieczyslaw Krawiarz
+     * 416098
+     */
+    
+    @Test
+     public void test0x() {
+        assertEquals("16", UltraPotegowanie.poteguj("0x10", "0x1"));
     }
+     
+     @Test
+     public void test0xGen1() {
+         Random r = new Random();
+         for(int i = 0; i < 100; i++){
+             int licz = r.nextInt();
+             assertEquals("1", UltraPotegowanie.poteguj(Integer.toString(licz), "0x0"));
+         }
+    }
+     
+     @Test
+     public void test0xGen2() {
+         Random r = new Random();
+         for(int i = 0; i < 100; i++){
+             int licz = r.nextInt();
+             assertEquals("0", UltraPotegowanie.poteguj("0x0", Integer.toString(licz)));
+         }
+    }
+    
     //Diana Orłowska
     @Test
     public void testNotacjaNaukowa(){
@@ -102,10 +131,5 @@ public class UltraPotegowanieTest {
     @Test
     public void testUlamki(){
         assertEquals("0.44721",UltraPotegowanie.poteguj("0.2","0.5"));
-    }
-    }
-    
-    
-    
 }
-
+}
