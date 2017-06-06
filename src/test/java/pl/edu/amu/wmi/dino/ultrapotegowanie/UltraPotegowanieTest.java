@@ -86,8 +86,8 @@ public class UltraPotegowanieTest {
     @Test
      public void testPotegujSzumi3() {
         assertEquals("0", UltraPotegowanie.poteguj("0", "1000"));
-       
-     /////////
+     }
+    
      /**
      * Mieczyslaw Krawiarz
      * 416098
