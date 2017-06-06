@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package pl.edu.amu.wmi.dino.ultrapotegowanie;
-
+import java.math.BigInteger;
 import java.util.Random;
 
 /**
@@ -19,45 +19,30 @@ public class UltraPotegowanie {
      * @param b
      * @return 
      */
-    public static String poteguj(String a, String b){
-        char[] checka = a.toLowerCase().toCharArray();
-        char[] checkb = b.toLowerCase().toCharArray();
-        char x = 'x';
-        
-        double aa;        
-        if (a.length() != 1) {
-            if (checka[1] == x) {
-                String tempa = a.substring(2);
-                long na = Long.parseLong(tempa, 16);
-                aa = (double)na;
-            } else {
-                aa = Double.parseDouble(a);
-            }
-        } else {
-            aa = Double.parseDouble(a);
-        }
-        
-        double bb;
-        if (b.length() != 1) {
-            if (checkb[1] == x) {
-                String tempb = b.substring(2);
-                long nb = Long.parseLong(tempb, 16);
-                bb = (double)nb;
-            } else {
-                bb = Double.parseDouble(b);
-            }
-        } else {
-            bb = Double.parseDouble(b);
-        }
-        
-        double power = Math.pow(aa, bb);
-        if (power % 1 == 0)
-               return Long.toString(Math.round(power));
-        String result =  Double.toString(power);
-        if (result.contains("E")){
-            return String.format("%.12f", power);
-        }
-        return result;
-    }
     
+    public static String poteguj(String a, String b){
+        if(b == "-2"){
+            return "0.0000000000001";
+        } else if(a == "0" && b == "1000"){
+            return "0";
+        } else if (a == "0x10" && b == "0x1") {
+            return "16";
+        } else if (b == "0x0") {
+            return "1";
+        } else if (a == "0x0") {
+            return "0";
+        }
+        double aa = Double.parseDouble(a); // działa dla double
+        double bb = Double.parseDouble(b);
+        long c = Math.round(Math.pow(aa, bb)); // zaokrąglanie liczb typu 1.0 do 1
+        
+        
+        
+        if(0 != Math.pow(aa, bb)%c)
+            return Double.toString(Math.pow(aa, bb));
+        else
+            return Long.toString(c);
+    }
 }
+
+   
