@@ -44,9 +44,5 @@ public class UltraPotegowanie {
             return Long.toString(c);
     }
 }
-/*
-public class UltraPotegowanie {
-    
 
-    
-*/
+   
