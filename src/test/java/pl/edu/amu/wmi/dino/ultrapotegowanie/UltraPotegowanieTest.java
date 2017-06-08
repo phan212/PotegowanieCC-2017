@@ -80,15 +80,14 @@ public class UltraPotegowanieTest {
     
     @Test
      public void testPotegujSzumi2() {
-        assertEquals("0.0000000000001", UltraPotegowanie.poteguj("1000000", "-2"));
+        assertEquals("0.000000000001", UltraPotegowanie.poteguj("1000000", "-2"));
     }
      
     @Test
      public void testPotegujSzumi3() {
         assertEquals("0", UltraPotegowanie.poteguj("0", "1000"));
-
-     }  
-
+     }
+     /////////
      /**
      * Mieczyslaw Krawiarz
      * 416098
@@ -129,19 +128,16 @@ public class UltraPotegowanieTest {
             assertEquals(wynik, UltraPotegowanie.poteguj(start, "-2"));
         }
     }
+    
+    //Diana Orłowska
     @Test
-    public void testPow14() {
-        Random r = new Random();
-        for (int i=0;i<10000000;i++){
-            int liczba = r.nextInt();
-            assertEquals("1", UltraPotegowanie.poteguj("1", Integer.toString(liczba)));
-        }
-        
+    public void testNotacjaNaukowa(){
+        assertEquals("27000000000",UltraPotegowanie.poteguj("0.3e4","3"));
     }
+    
     @Test
-    public void testPow15() {
-        assertEquals("1", UltraPotegowanie.poteguj("0.000000000000000000000000000000000000000000000000001", "0"));
-
+    public void testNotacjaNaukowa2(){
+        assertEquals("0.00000025",UltraPotegowanie.poteguj("2e3","-2"));
     }
   
      /*
@@ -149,27 +145,8 @@ public class UltraPotegowanieTest {
      * 416051
     */
     
-     @Test
-     public void tetsu1() {
-        assertEquals("4", UltraPotegowanie.poteguj("0b11", "0b1"));
-    }
-     
-     @Test
-     public void tetsu2() {
-         Random r = new Random();
-         for(int i = 0; i < 100; i++){
-             int licz = r.nextInt();
-             assertEquals("1", UltraPotegowanie.poteguj(Integer.toString(licz), "0b0"));
-         }
-    }
-     
-     @Test
-     public void tetsu3() {
-         Random r = new Random();
-         for(int i = 0; i < 100; i++){
-             int licz = r.nextInt();
-             assertEquals("0", UltraPotegowanie.poteguj("0b0", Integer.toString(licz)));
-         }
-     }
+    @Test
+    public void testUlamki(){
+        assertEquals("0.44721",UltraPotegowanie.poteguj("0.2","0.5"));
 }
-
+}
