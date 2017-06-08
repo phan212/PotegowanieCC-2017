@@ -114,7 +114,19 @@ public class UltraPotegowanieTest {
              int licz = r.nextInt();
              assertEquals("0", UltraPotegowanie.poteguj("0x0", Integer.toString(licz)));
          }
+    }
 
+    //Rafal Muzia
+    @Test 
+    public void testPow13() {
+        String start = "10000000";
+        String wynik = "0.000000000000001";
+        for(int i=0;i<10;i++){
+            start += "0";
+            wynik = wynik.replace('1', '0');
+            wynik += "01";
+            assertEquals(wynik, UltraPotegowanie.poteguj(start, "-2"));
+        }
     }
     
     //Diana Orłowska
@@ -127,6 +139,11 @@ public class UltraPotegowanieTest {
     public void testNotacjaNaukowa2(){
         assertEquals("0.00000025",UltraPotegowanie.poteguj("2e3","-2"));
     }
+  
+     /*
+     * Agata Buszczak
+     * 416051
+    */
     
     @Test
     public void testUlamki(){
